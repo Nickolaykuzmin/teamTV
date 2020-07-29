@@ -8,16 +8,14 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AngularFireModule} from "@angular/fire";
 import {environment} from "../environments/environment";
 import {AngularFireAuthModule} from "@angular/fire/auth";
-import { SignInComponent } from './sign-in/sign-in.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {AdminModule} from "./admin/admin.module";
+import { AuthModule } from './core/auth/auth.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignInComponent,
-    SignUpComponent
+
   ],
   imports: [
     BrowserModule,
@@ -27,6 +25,7 @@ import {AdminModule} from "./admin/admin.module";
     AngularFireAuthModule,
     NgbModule,
     AdminModule,
+    AuthModule,
     ReactiveFormsModule
   ],
   providers: [
