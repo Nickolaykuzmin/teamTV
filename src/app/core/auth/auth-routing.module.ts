@@ -6,12 +6,14 @@ import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
 
 const routes: Routes = [
   {
-    path: 'login',
-    component: SignInComponent
+    path: '',
+    component: SignInComponent,
+
   },
   {
-    path: 'register',
-    component: SignUpComponent
+    path: '',
+    component: SignUpComponent,
+
   },
 ];
 
