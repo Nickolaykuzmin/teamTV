@@ -11,27 +11,35 @@ import {AngularFireAuthModule} from "@angular/fire/auth";
 import {ReactiveFormsModule} from "@angular/forms";
 import {AdminModule} from "./admin/admin.module";
 import { AuthModule } from './core/auth/auth.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HomeComponent } from './home/home.component';
+import { AuthRoutingModule } from './core/auth/auth-routing.module';
+import { AdminRoutingModule } from './admin/admin-routing.module';
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CoreModule,
-    AngularFireModule.initializeApp(environment.configFirebase),
-    AngularFireAuthModule,
-    NgbModule,
-    AdminModule,
-    AuthModule,
-    ReactiveFormsModule
-  ],
-  providers: [
-
-  ],
-  bootstrap: [AppComponent]
+   declarations: [
+      AppComponent,
+      HomeComponent
+   ],
+   imports: [
+      BrowserModule,
+      AppRoutingModule,
+      CoreModule,
+      AngularFireModule.initializeApp(environment.configFirebase),
+      AngularFireAuthModule,
+      NgbModule,
+      AdminModule,
+      AuthModule,
+      AuthRoutingModule,
+      AdminRoutingModule,
+      ReactiveFormsModule,
+      FontAwesomeModule
+   ],
+   providers: [],
+   bootstrap: [
+      AppComponent
+   ]
 })
 export class AppModule {
 }
