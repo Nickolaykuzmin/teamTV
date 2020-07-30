@@ -13,8 +13,6 @@ import {AdminModule} from "./admin/admin.module";
 import { AuthModule } from './core/auth/auth.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './home/home.component';
-import { AuthRoutingModule } from './core/auth/auth-routing.module';
-import { AdminRoutingModule } from './admin/admin-routing.module';
 
 
 @NgModule({
@@ -31,8 +29,6 @@ import { AdminRoutingModule } from './admin/admin-routing.module';
       NgbModule,
       AdminModule,
       AuthModule,
-      AuthRoutingModule,
-      AdminRoutingModule,
       ReactiveFormsModule,
       FontAwesomeModule
    ],
