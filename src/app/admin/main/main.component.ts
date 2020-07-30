@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {AuthService} from "../../core/services/auth.service";
+import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../core/services/user.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-main',
@@ -8,11 +8,16 @@ import {UserService} from "../../core/services/user.service";
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+  authUser$: Observable<{ uid: string; displayName: string; email: string }>;
 
-  constructor(private userService: UserService) { }
-
-  ngOnInit(): void {
-    this.userService.getCurrentUserObservable().subscribe(user => console.log({user}))
+  constructor(private userService: UserService) {
   }
 
+  ngOnInit(): void {
+    this.authUser$ = this.userService.getCurrentUserObservable();
+  }
+
+  logOut() {
+    this.userService.signOut();
+  }
 }

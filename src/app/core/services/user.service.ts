@@ -4,32 +4,45 @@ import {fromPromise} from "rxjs/internal-compatibility";
 import UserCredential = firebase.auth.UserCredential;
 import {Observable} from "rxjs";
 import {User} from "firebase";
-import {AuthSignUpErrorCode} from "../models/auth-error.model";
+import {AuthSignInErrorCode, AuthSignUpErrorCode} from "../models/auth-error.model";
 import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  authSignInErrorCode = AuthSignInErrorCode;
   authSignUpErrorCode = AuthSignUpErrorCode;
 
   constructor(public afAuth: AngularFireAuth) {
   }
 
-  getErrorMessage(code: string): string {
+  getErrorSignInMessage(code: string): string {
+    return this.authSignInErrorCode[code];
+  }
+
+  getErrorSignUpMessage(code: string): string {
     return this.authSignUpErrorCode[code];
   }
 
   getCurrentUserObservable() {
     return this.afAuth.authState.pipe(
       map(user => {
-        return {
-          uid: user.uid,
-          displayName: user.displayName,
-          email: user.email
+        if (user) {
+          return {
+            uid: user.uid,
+            displayName: user.displayName,
+            email: user.email
+          }
         }
+
+        return null;
       })
     );
+  }
+
+  signOut(): Observable<void> {
+    return fromPromise(this.afAuth.signOut());
   }
 
   signInWithEmailAndPassword(email: string, password: string) {

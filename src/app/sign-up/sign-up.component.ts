@@ -4,6 +4,7 @@ import {UserService} from "../core/services/user.service";
 import {AuthSignUpErrorCode} from "../core/models/auth-error.model";
 import {Subject} from "rxjs";
 import {takeUntil} from "rxjs/operators";
+import {AlertService} from "../core/services/alert.service";
 
 @Component({
   selector: 'app-sign-up',
@@ -15,7 +16,8 @@ export class SignUpComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject<void>();
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private alertService: AlertService
   ) {
 
   }
@@ -36,8 +38,12 @@ export class SignUpComponent implements OnInit, OnDestroy {
     this.userService.signUpWithEmailAndPassword(email, password)
       .pipe(takeUntil(this.destroy$))
       .subscribe(userCredential => {
+        this.alertService.successMessage('Successfully registered', 'Register', {timeOut: 1000})
+
       }, error => {
-        const errorMessage = this.userService.getErrorMessage(error.code);
+        const errorMessage = this.userService.getErrorSignUpMessage(error.code);
+        this.alertService.errorMessage(errorMessage, 'Error', {timeOut: 1000})
+
       })
   }
 

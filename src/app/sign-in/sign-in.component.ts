@@ -4,6 +4,7 @@ import {takeUntil} from "rxjs/operators";
 import {UserService} from "../core/services/user.service";
 import {Subject} from "rxjs";
 import {Router} from "@angular/router";
+import {AlertService} from "../core/services/alert.service";
 
 @Component({
   selector: 'app-sign-in',
@@ -17,7 +18,8 @@ export class SignInComponent implements OnInit, OnDestroy {
 
   constructor(
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private alertService: AlertService
   ) { }
 
   ngOnInit(): void {
@@ -31,11 +33,13 @@ export class SignInComponent implements OnInit, OnDestroy {
     const {email, password} = this.signInUserForm.getRawValue();
     this.userService.signInWithEmailAndPassword(email, password)
       .pipe(takeUntil(this.destroy$))
-      .subscribe(userCredential => {
-        console.log({userCredential});
+      .subscribe(_ => {
+        this.alertService.successMessage('Successfully ', 'Login Success', {timeOut: 1000})
+
         return this.router.navigate(['/admin', 'main']);
       }, error => {
-        const errorMessage = this.userService.getErrorMessage(error.code);
+        const errorMessage = this.userService.getErrorSignInMessage(error.code);
+        this.alertService.errorMessage(errorMessage, 'User Not Found', {timeOut: 1000})
       })
   }
 

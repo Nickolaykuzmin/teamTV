@@ -10,32 +10,32 @@ import {environment} from "../environments/environment";
 import {AngularFireAuthModule} from "@angular/fire/auth";
 import {ReactiveFormsModule} from "@angular/forms";
 import {AdminModule} from "./admin/admin.module";
-import { AuthModule } from './core/auth/auth.module';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HomeComponent } from './home/home.component';
+import {AuthModule} from './core/auth/auth.module';
+import {HttpClientModule} from "@angular/common/http";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
-   declarations: [
-      AppComponent,
-      HomeComponent
-   ],
-   imports: [
-      BrowserModule,
-      AppRoutingModule,
-      CoreModule,
-      AngularFireModule.initializeApp(environment.configFirebase),
-      AngularFireAuthModule,
-      NgbModule,
-      AdminModule,
-      AuthModule,
-      ReactiveFormsModule,
-      FontAwesomeModule
-   ],
-   providers: [],
-   bootstrap: [
-      AppComponent
-   ]
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    CoreModule,
+    AngularFireModule.initializeApp(environment.configFirebase),
+    AngularFireAuthModule,
+    NgbModule,
+    AdminModule,
+    HttpClientModule,
+    AuthModule,
+    ReactiveFormsModule
+  ],
+  providers: [],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule {
 }
