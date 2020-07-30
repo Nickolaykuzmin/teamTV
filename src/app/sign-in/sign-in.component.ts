@@ -20,7 +20,8 @@ export class SignInComponent implements OnInit, OnDestroy {
     private userService: UserService,
     private router: Router,
     private alertService: AlertService
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.signInUserForm = new FormGroup({

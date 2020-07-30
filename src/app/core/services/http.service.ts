@@ -19,11 +19,11 @@ export class HttpService {
   ) {
   }
 
-  getMethod<T>(url: string, headers?: HttpHeaders, params?: HttpParams): Observable<T> {
+  get<T>(url: string, headers?: HttpHeaders, params?: HttpParams): Observable<T> {
     return this.httpClient.get<T>(url, {headers, params});
   }
 
-  postMethod(headers: HttpHeaders, data: any) {
+  post(headers: HttpHeaders, data: any) {
 
   }
 }
