@@ -5,19 +5,10 @@ import {SignUpComponent} from "./sign-up/sign-up.component";
 
 
 const routes: Routes = [
-  {
-    path: 'login',
-    pathMatch: 'full',
-    component: SignInComponent
-  },
-  {
-    path: 'register',
-    component: SignUpComponent
-  },
-  {
-    path: '*',
-    redirectTo: 'login'
-  },
+  // {
+  //   path: 'login',
+  //   loadChildren: () => import('./core/auth/auth.module').then(login => login.AuthModule)
+  // },
   {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then(admin => admin.AdminModule)
