@@ -8,31 +8,34 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AngularFireModule} from "@angular/fire";
 import {environment} from "../environments/environment";
 import {AngularFireAuthModule} from "@angular/fire/auth";
-import { SignInComponent } from './sign-in/sign-in.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {AdminModule} from "./admin/admin.module";
+import { AuthModule } from './core/auth/auth.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HomeComponent } from './home/home.component';
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SignInComponent,
-    SignUpComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CoreModule,
-    AngularFireModule.initializeApp(environment.configFirebase),
-    AngularFireAuthModule,
-    NgbModule,
-    AdminModule,
-    ReactiveFormsModule
-  ],
-  providers: [
-
-  ],
-  bootstrap: [AppComponent]
+   declarations: [
+      AppComponent,
+      HomeComponent
+   ],
+   imports: [
+      BrowserModule,
+      AppRoutingModule,
+      CoreModule,
+      AngularFireModule.initializeApp(environment.configFirebase),
+      AngularFireAuthModule,
+      NgbModule,
+      AdminModule,
+      AuthModule,
+      ReactiveFormsModule,
+      FontAwesomeModule
+   ],
+   providers: [],
+   bootstrap: [
+      AppComponent
+   ]
 })
 export class AppModule {
 }
