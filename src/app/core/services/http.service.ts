@@ -23,7 +23,7 @@ export class HttpService {
     return this.httpClient.get<T>(url, {headers, params});
   }
 
-  post(headers: HttpHeaders, data: any) {
-
+  post<T>(url: string, body: any, headers: HttpHeaders, params?: HttpParams) {
+    this,this.httpClient.post<T>(url, body, {headers, params})
   }
 }
