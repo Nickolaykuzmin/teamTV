@@ -1,1 +1,21 @@
+<button (click)="postData('body-text')">Send</button>
+
 {{(tvRecommend$ | async) | json}}
+
+<div class="card" style="width: 18rem;">
+
+  <div class="card-body">
+    <h3 class="card-title">{{tvRecommend$}}</h3>
+  </div>
+  <div class="card-body">
+    <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+</div>
