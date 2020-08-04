@@ -9,7 +9,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'auth',
+    path: '',
     loadChildren: () => import('./core/auth/auth.module').then(login => login.AuthModule)
   },
   {
