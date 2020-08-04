@@ -18,17 +18,7 @@ export class AuthGuardService implements CanActivate{
       // this.router.navigate(['/auth/register']);
       return;
     }
-    // this.router.navigate(['/admin/main']);
-    return confirm('Confirm redirect');
-}
-
-  // canActivate(): boolean {
-  //   if (!this.auth) {
-  //     this.router.navigate(['/auth/login']);
-  //     return false;
-  //   }
-  //   console.log('guard');
-  //   this.router.navigate(['/main']);
-  //   return true;
-  // }
+    this.router.navigate(['/admin/main']);
+    return confirm('The user will be redirected to the Login page');
+  }
 }
