@@ -1,10 +1,10 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {UserService} from "../core/services/user.service";
-import {AuthSignUpErrorCode} from "../core/models/auth-error.model";
+import {UserService} from "./../../../core/services/user.service";
+import {AuthSignUpErrorCode} from "./../../../core/models/auth-error.model";
 import {Subject} from "rxjs";
 import {takeUntil} from "rxjs/operators";
-import {AlertService} from "../core/services/alert.service";
+import {AlertService} from "./../../../core/services/alert.service";
 
 @Component({
   selector: 'app-sign-up',

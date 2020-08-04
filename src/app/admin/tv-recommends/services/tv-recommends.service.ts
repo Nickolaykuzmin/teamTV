@@ -23,8 +23,5 @@ export class TvRecommendsService {
 
   postTVRecommends(body: any): Observable<any> {
     return this.httpService.post<Observable<HttpEvent<any>>>(this.API_TV_GET_RECOMMENDS, body);
-    ;
   }
-
-
 }
