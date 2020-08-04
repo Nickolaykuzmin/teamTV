@@ -1,27 +1,30 @@
 
+<div class="container mt-5 mb-5">
+  <h2 class="mb-3 ">TV Maze Reccomends</h2>
 
+  <!-- <button (click)="postData('body-text')">Send</button> -->
 
-<button (click)="postData('body-text')">Send</button>
+  <!-- {{(tvRecommend$ | async) | json}} -->
 
-{{(tvRecommend$ | async) | json}}
-
-<div class="card" >
-
-  <div class="card-body d-flex justify-content-center ">
-    <h3 class="card-title">{{(tvRecommend$ | async).name}}</h3>
-  </div>
-  <div class="card-body d-inline-flex justify-content-around">
-    <div class="card-body col-3">
-     {{(tvRecommend$ | async).summary}}
-     <button href = '' >More about show</button>
+  <div class="card" >
+    <div class="card-body d-flex justify-content-center ">
+      <h3 class="card-title">{{(tvRecommend$ | async).name}}</h3>
     </div>
-    <img class="card-img col-1" src='...' alt="Card image cap">
-    <div class="card-body col-3">
-      <p>{{(tvRecommend$ | async).runtime}}</p>
-      <p>{{(tvRecommend$ | async).status}}</p>
-      <p>{{(tvRecommend$ | async).type}}</p>
-      <p>{{(tvRecommend$ | async).genres}}</p>
-      <p>{{(tvRecommend$ | async).officialSite}}</p>
+    <div class="card-body d-inline-flex justify-content-around">
+      <div class="card-body col">
+       {{(tvRecommend$ | async).summary}}
+       <br>
+       <button href = '' class='mt-2'>More about show</button>
+      </div>
+      <img class="card-img col-2" src='...' alt="Card image cap">
+      <div class="card-body col">
+        <p><label class="mr-2"><strong >Runtime</strong></label>{{(tvRecommend$ | async).runtime}}</p>
+        <p><label class="mr-2"><strong >Status</strong></label>{{(tvRecommend$ | async).status}}</p>
+        <p><label class="mr-2"><strong >Show Type</strong></label>{{(tvRecommend$ | async).type}}</p>
+        <p><label class="mr-2"><strong >Genres</strong></label>{{(tvRecommend$ | async).genres}}</p>
+        <p><label class="mr-2"><strong >Official site</strong></label>{{(tvRecommend$ | async).officialSite}}</p>
+      </div>
     </div>
   </div>
 </div>
+
