@@ -15,13 +15,14 @@ const routes: Routes = [
     path: 'main',
     component: MainComponent,
     canActivate: [AngularFireAuthGuard],
+
   }
 
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AdminRoutingModule {
 }
