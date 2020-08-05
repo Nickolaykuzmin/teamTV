@@ -23,12 +23,11 @@ export class AuthGuardService implements CanActivate{
      return this.userService.getCurrentUserObservable().pipe(map(permission => {
       debugger;
       console.log(permission.uid);
-      if(!permission.email) {
-        this.router.navigate(['/auth/login']);
-        return false;
+      if(permission.email) {
+        this.router.navigate(['/admin/main']);
+        return true;
       }
-      this.router.navigate(['/admin/main']);
-      return true;
+      return false;
      }));
 
 
