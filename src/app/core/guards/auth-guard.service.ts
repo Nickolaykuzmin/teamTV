@@ -19,7 +19,7 @@ export class AuthGuardService implements CanActivate{
     public router: Router,
     private userService: UserService
     ) {}
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : Observable<boolean> | boolean{
+  canActivate() : Observable<boolean> | boolean{
      return this.userService.getCurrentUserObservable().pipe(map(permission => {
       debugger;
       console.log(permission.uid);

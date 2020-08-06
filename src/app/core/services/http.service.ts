@@ -20,10 +20,10 @@ export class HttpService {
   }
 
   get<T>(url: string, headers?: HttpHeaders, params?: HttpParams): Observable<T> {
-    return this.httpClient.get<T>(url, {headers, params});
+    return this.httpClient.request<T>(HttpMethod.GET, url, {headers, params});
   }
 
-  post<T>(url: string, body: any, headers?: HttpHeaders, params?: HttpParams) {
-    return this.httpClient.post(url, body, {headers, params});
+  post<T>(url: string, body: any, headers?: HttpHeaders, params?: HttpParams): Observable<any> {
+    return this.httpClient.request(HttpMethod.POST, url, {body, headers, params});
   }
 }

@@ -2,7 +2,7 @@
 <div class="container mt-5 mb-5">
   <h2 class="mb-3 ">TV Maze Reccomends</h2>
 
-  <!-- <button (click)="postData('body-text')">Send</button> -->
+  <button (click)="postData('body-text')">Send</button>
 
   <!-- {{(tvRecommend$ | async) | json}} -->
 
@@ -14,7 +14,7 @@
       <div class="card-body col">
        {{(tvRecommend$ | async).summary}}
        <br>
-       <button href = '' class='mt-2'>More about show</button>
+       <button href = '' class='mt-2 primary'>More about show</button>
       </div>
       <img class="card-img col-2" src='...' alt="Card image cap">
       <div class="card-body col">

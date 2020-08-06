@@ -27,11 +27,7 @@ export class TvRecommendsComponent implements OnInit  {
   postData(body) {
     console.log(this.tvRecommendsService.postTVRecommends(body));
 
-    this.tvRecommendsService.postTVRecommends(body),
-    error => {
-      const errorMessage = this.userService.getErrorSignInMessage(error.code);
-      this.alertService.errorMessage(errorMessage, 'Something went wrong', {timeOut: 1000});
-    }
+    return this.tvRecommendsService.postTVRecommends(body)
   }
 
 }
