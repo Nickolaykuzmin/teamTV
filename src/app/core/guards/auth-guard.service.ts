@@ -15,8 +15,8 @@ import { map } from 'rxjs/operators';
 export class AuthGuardService implements CanActivate{
 
   constructor(
-    public auth: AuthService,
-    public router: Router,
+    private auth: AuthService,
+    private router: Router,
     private userService: UserService
     ) {}
   canActivate() : Observable<boolean> | boolean{
@@ -25,9 +25,9 @@ export class AuthGuardService implements CanActivate{
       console.log(permission.uid);
       if(permission.email) {
         this.router.navigate(['/admin/main']);
-        return true;
+        return false;
       }
-      return false;
+      return true;
      }));
 
 
