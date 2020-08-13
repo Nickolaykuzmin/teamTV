@@ -4,6 +4,7 @@ import {UserService} from "./../../../core/services/user.service";
 import {Subject} from "rxjs";
 import {takeUntil} from "rxjs/operators";
 import {AlertService} from "./../../../core/services/alert.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -16,7 +17,8 @@ export class SignUpComponent implements OnInit, OnDestroy {
 
   constructor(
     private userService: UserService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private router: Router,
   ) {
 
   }
@@ -38,7 +40,7 @@ export class SignUpComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe(userCredential => {
         this.alertService.successMessage('Successfully registered', 'Register', {timeOut: 1000})
-
+        return this.router.navigate(['/auth/login']);
       }, error => {
         const errorMessage = this.userService.getErrorSignUpMessage(error.code);
         this.alertService.errorMessage(errorMessage, 'Error', {timeOut: 1000})
