@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { Router, ActivatedRouteSnapshot, RouterStateSnapshot, CanActivate } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { UserService } from '../services/user.service';
+import { UserService } from '../../services/user.service';
 import { map } from 'rxjs/operators';
-
-
 
 
 @Injectable({
@@ -24,7 +22,7 @@ export class AuthGuardService implements CanActivate{
       debugger;
       console.log(permission.uid);
       if(permission.email) {
-        this.router.navigate(['/admin/main']);
+        this.router.navigate(['admin']);
         return false;
       }
       return true;

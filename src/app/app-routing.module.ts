@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import { AuthGuardService }   from './core/guards/auth-guard.service'
+import { AuthGuardService }   from './core/services/guards/auth-guard.service'
 
 
 const routes: Routes = [
@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: 'auth',
     loadChildren: () => import('./core/auth/auth.module').then(login => login.AuthModule),
-    // canActivate: [AuthGuardService]
+    canActivate: [AuthGuardService]
   },
   {
     path: 'admin',
@@ -27,7 +27,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  // providers: [AuthGuardService]
+  providers: [AuthGuardService]
 })
 export class AppRoutingModule {
 }

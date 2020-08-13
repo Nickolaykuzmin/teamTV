@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TvRecommendsService } from "./services/tv-recommends.service";
-import { TvRecommendsModel } from "./models/tv-recommends.model";
-import { UserService } from "../../core/services/user.service"
+import { TvRecommendsService } from "../../../core/services/tv-recommends.service";
+import { TvRecommendsModel } from "../models/tv-recommends.model";
+import { UserService } from "../../../core/services/user.service"
 import { Observable } from "rxjs";
 import { AlertService } from 'src/app/core/services/alert.service';
 
@@ -27,7 +27,7 @@ export class TvRecommendsComponent implements OnInit  {
   postData(body) {
     console.log(this.tvRecommendsService.postTVRecommends(body));
 
-    return this.tvRecommendsService.postTVRecommends(body)
+    return this.tvRecommendsService.postTVRecommends(body).subscribe(res => console.log(res));
   }
 
 }
