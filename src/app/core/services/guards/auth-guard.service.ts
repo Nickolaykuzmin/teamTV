@@ -19,13 +19,12 @@ export class AuthGuardService implements CanActivate{
     ) {}
   canActivate() : Observable<boolean> | boolean{
      return this.userService.getCurrentUserObservable().pipe(map(permission => {
-      debugger;
-      console.log(permission.uid);
-      if(permission.email) {
-        this.router.navigate(['admin']);
-        return false;
+       console.log('perm', permission.email);
+      if(!permission.email) {
+        return true;
       }
-      return true;
+       this.router.navigate(['auth']);
+      return false;
      }));
 
 

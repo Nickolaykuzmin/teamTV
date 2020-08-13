@@ -17,7 +17,7 @@
        <button href = '' class='mt-2 primary'>More about show</button>
       </div>
       <img class="card-img col-2" src='...' alt="Card image cap">
-      <div class="card-body col">
+      <div class="card-body col" *ngIf="tvRecommend$ | async">
         <p><label class="mr-2"><strong >Runtime:</strong></label>{{(tvRecommend$ | async).runtime}}</p>
         <p><label class="mr-2"><strong >Status:</strong></label>{{(tvRecommend$ | async).status}}</p>
         <p><label class="mr-2"><strong >Show Type:</strong></label>{{(tvRecommend$ | async).type}}</p>

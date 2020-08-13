@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: 'auth',
     loadChildren: () => import('./core/auth/auth.module').then(login => login.AuthModule),
-    canActivate: [AuthGuardService]
+    // canActivate: [AuthGuardService]
   },
   {
     path: 'admin',

@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: 'login',
     component: SignInComponent,
-    // canActivate: [AuthGuardService]
+
 
   },
   {
@@ -22,6 +22,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  providers: [AuthGuardService]
+
 })
 export class AuthRoutingModule { }
