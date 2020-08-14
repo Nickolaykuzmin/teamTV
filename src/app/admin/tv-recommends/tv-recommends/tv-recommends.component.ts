@@ -25,9 +25,7 @@ export class TvRecommendsComponent implements OnInit  {
   }
 
   postData(body) {
-    console.log(this.tvRecommendsService.postTVRecommends(body));
-
-    return this.tvRecommendsService.postTVRecommends(body).subscribe(res => console.log(res));
+    this.tvRecommendsService.postTVRecommend(body).subscribe(res => console.log(res));
   }
 
 }
