@@ -9,7 +9,7 @@ import { HttpEvent } from '@angular/common/http';
 })
 export class TvRecommendsService {
   BASE_API_TV_URL = 'https://api.tvmaze.com';
-  API_TV_GET_RECOMMENDS = `${this.BASE_API_TV_URL}/shows/6771`;
+  API_TV_GET_RECOMMENDS = `${this.BASE_API_TV_URL}/shows.json`;
 
   constructor(
     private httpService: HttpService
@@ -22,6 +22,6 @@ export class TvRecommendsService {
   }
 
   postTVRecommend(body: any): Observable<any> {
-    return this.httpService.post<Observable<HttpEvent<any>>>(this.BASE_API_TV_URL, body);
+    return this.httpService.post<Observable<HttpEvent<any>>>(this.API_TV_GET_RECOMMENDS, body);
   }
 }
