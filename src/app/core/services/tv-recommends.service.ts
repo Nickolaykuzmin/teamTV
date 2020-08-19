@@ -9,7 +9,7 @@ import { HttpEvent } from '@angular/common/http';
 })
 export class TvRecommendsService {
   BASE_API_TV_URL = 'https://api.tvmaze.com';
-  API_TV_GET_RECOMMENDS = `${this.BASE_API_TV_URL}/shows.json`;
+  API_TV_GET_RECOMMENDS = `${this.BASE_API_TV_URL}/shows/6771`;
 
   constructor(
     private httpService: HttpService
