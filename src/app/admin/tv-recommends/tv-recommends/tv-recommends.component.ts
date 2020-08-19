@@ -13,7 +13,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./tv-recommends.component.scss']
 })
 export class TvRecommendsComponent implements OnInit  {
-  public tvRecommend$: Observable<TvRecommendsModel>;
+  public tvRecommend$: any;
 
   constructor(
     private tvRecommendsService: TvRecommendsService,
@@ -22,7 +22,9 @@ export class TvRecommendsComponent implements OnInit  {
     ) { }
 
   ngOnInit(): void {
-    this.tvRecommend$ = this.tvRecommendsService.getTVRecommends();
+    this.tvRecommendsService.getTVRecommends().pipe(
+      map( res => this.tvRecommend$ = res)
+    ).subscribe(el => console.log('res', el));
   }
 
   postData(body) {

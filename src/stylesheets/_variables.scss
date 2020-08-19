@@ -1,98 +1,18 @@
-$fontFamilyMedium: 'Gotham Medium', Arial, sans-serif;
-$fontFamilyBook: 'Gotham Book', Arial, sans-serif;
-$fontFamilyLight: 'Gotham Light', Arial, sans-serif;
+$fontFamilyMajor: "Open Sans", sans-serif;
+$fontFamilySecondary: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 
 
 //colors
-$color-text-primary: #19233c;
-$color-text-secondary: #3d4060;
-$color-text-tertiary: #566787;
+$color-text-primary: #fff;
+$color-tex-card-title: #b9e3de;
 
 
 //background
-$color-background-button: #dee8f7;
-$color-background-primary: #f5f6fa;
-$color-background-secondary: #fafbfd;
-$color-background-tertiary: #eff4fc;
 $color-background-white: #ffffff;
-$color-background-dark: #19233c;
+$color-background-dark: #0a0a0a;
+$color-background-green: #3C948B;
 $color-background-grey: #696a6d;
-
-$color-background: (
-  button-white: #dee8f7,
-  primary: #696a6d
-);
+$box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
 
 
 // Gradients
-
-// Gradients
-
-// Gradient backgrounds
-@mixin linear-gradient($direction, $fromColor, $toColor) {
-  background-color: $toColor; /* Fallback Color */
-  background-image: -webkit-gradient(linear, $direction, from($fromColor), to($toColor)); /* Saf4+, Chrome */
-  background-image: -webkit-linear-gradient($direction, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background-image:    -moz-linear-gradient($direction, $fromColor, $toColor); /* FF3.6 */
-  background-image:     -ms-linear-gradient($direction, $fromColor, $toColor); /* IE10 */
-  background-image:      -o-linear-gradient($direction, $fromColor, $toColor); /* Opera 11.10+ */
-  background-image:         linear-gradient($direction, $fromColor, $toColor);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
-};
-
-.header {
-  @include linear-gradient(left, #394fa3, #1d2c64)
-}
-
-
-.gradient-sidebar-menu {
-  background: linear-gradient(#27325c, #1d264a);
-}
-
-// .gradient-active-tab-icon() {
-//     .gradient(#307ea6, #2a3a86);
-// }
-
-// .gradient-blue() {
-//     .gradient(#6792e2, #405192);
-// }
-
-// .gradient-dark-green() {
-//     .gradient(#1abc9c, #307769);
-// }
-
-// .gradient-green() {
-//     .gradient(#6abe4d, #3f7d35);
-// }
-
-// .gradient-yellow() {
-//     .gradient(#eac85f, #d58844);
-// }
-
-// .gradient-orange() {
-//     .gradient(#e67e22, #d35400);
-// }
-
-// .gradient-red() {
-//     .gradient(#e58d81, #ff082b);
-// }
-
-// .gradient-pink() {
-//     .gradient(#f56a92, #cf1a4d);
-// }
-
-// .gradient-violet() {
-//     .gradient(#a55eea, #513e6d);
-// }
-
-// .gradient-dark-violet() {
-//     .gradient(#5d2bdc, #341f97);
-// }
-
-// .gradient-black() {
-//     .gradient(#576574, #222f3e);
-// }
-
-// .gradient-grey() {
-//     .gradient(#909d9e, #586162);
-// }

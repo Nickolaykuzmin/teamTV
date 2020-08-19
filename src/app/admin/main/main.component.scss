@@ -1,0 +1,13 @@
+@import '../../../stylesheets/variables';
+
+
+.navbar {
+  background: $color-background-grey;
+  font-style: $color-text-primary;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a {
+  color: $color-text-primary;
+}
