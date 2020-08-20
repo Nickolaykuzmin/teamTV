@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {AngularFireAuthGuard} from "@angular/fire/auth-guard";
 import {MainComponent} from "./main/main.component";
+import { TvRecommendDatailsComponent } from './tv-recommends/tv-recommend-datails/tv-recommend-datails.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,10 @@ const routes: Routes = [
     component: MainComponent,
     canActivate: [AngularFireAuthGuard],
 
+  },
+  {
+    path:'details',
+    component:TvRecommendDatailsComponent
   }
 
 ];

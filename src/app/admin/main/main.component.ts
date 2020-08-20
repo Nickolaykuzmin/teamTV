@@ -1,7 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {UserService} from "../../core/services/user.service";
-import {Observable} from "rxjs";
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -9,20 +6,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  authUser$: Observable<{ uid: string; displayName: string; email: string }>;
 
-  constructor(
-    private userService: UserService,
-    private router: Router,
-    ) {
-  }
+  constructor() {}
 
-  ngOnInit(): void {
-    this.authUser$ = this.userService.getCurrentUserObservable();
-  }
+  ngOnInit() { }
 
-  logOut() {
-    this.userService.signOut();
-    return  this.router.navigate(['/login']);
-  }
 }

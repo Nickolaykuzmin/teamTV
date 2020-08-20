@@ -1,17 +1,7 @@
-<nav class="navbar">
-  <a class="nav-link" href="#" routerLink="">Home</a>
-  <ul class="nav justify-content-end">
-    <ng-container *ngIf="(authUser$ | async) as user;">
-      <li class="nav-item mr-3">
-        <span>{{user.email}}</span>
-      </li>
-      <li></li>
-      <div class="nav-item">
-        <a (click)="logOut()" routerLink="/auth/login">Sign Out</a>
-      </div>
-    </ng-container>
-  </ul>
-</nav>
+<header>
+  <app-header></app-header>
+</header>
+
 <main>
   <app-tv-recommends></app-tv-recommends>
 </main>
