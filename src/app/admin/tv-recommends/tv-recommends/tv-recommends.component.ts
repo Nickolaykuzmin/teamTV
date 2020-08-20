@@ -13,7 +13,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./tv-recommends.component.scss']
 })
 export class TvRecommendsComponent implements OnInit  {
-  public tvRecommend$: any;
+  public tvRecommend$: TvRecommendsModel[] = [];
 
   constructor(
     private tvRecommendsService: TvRecommendsService,
@@ -22,21 +22,31 @@ export class TvRecommendsComponent implements OnInit  {
     ) { }
 
   ngOnInit(): void {
-    this.tvRecommendsService.getTVRecommends().pipe(
-      map( res => this.tvRecommend$ = res)
-    ).subscribe(el => console.log('res', el));
+    this.tvRecommendsService
+    .getTVRecommends()
+    .pipe(
+      map( (res:TvRecommendsModel) => {
+        const newArrayData: TvRecommendsModel[] = [];
+        for(const key in res){
+          if (res.hasOwnProperty(key)){
+           newArrayData.push({...res[key], id:key});
+          }
+        }
+        return newArrayData;
+      })
+    ).subscribe(items => this.tvRecommend$ = items);
   }
 
   postData(body) {
     this.tvRecommendsService.postTVRecommend(body).subscribe(res => console.log(res));
   }
 
-  getLastVideos(){
-    this.tvRecommend$
-    .pipe(
-      map(res => { console.log(res)  })
-    )
-    .subscribe(res => console.log('second', res))
-  }
+  // getLastVideos(){
+  //   this.tvRecommend$
+  //   .pipe(
+  //     map(res => { console.log(res)  })
+  //   )
+  //   .subscribe(res => console.log('second', res))
+  // }
 
 }

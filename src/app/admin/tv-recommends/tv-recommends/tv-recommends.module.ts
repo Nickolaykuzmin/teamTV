@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {TvRecommendsComponent} from "./tv-recommends.component";
-import {TvRecommendsService} from "../../../core/services/tv-recommends.service";
+import { TvRecommendsComponent } from "./tv-recommends.component";
+import { TvRecommendsService } from "../../../core/services/tv-recommends.service";
 
 
 

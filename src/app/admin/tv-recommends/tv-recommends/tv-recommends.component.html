@@ -1,27 +1,27 @@
 
-<div class="container mt-5 mb-5">
+<div class="container mt-5 mb-5" *ngFor="let item of tvRecommend$">
   <h2 class="mb-3 ">TV Maze Reccomends</h2>
 
   <button (click)="postData('body-text')">Send</button>
-  <button (click)="getLastVideos()">Last Videos</button>
+  <!-- <button (click)="getLastVideos()">Last Videos</button> -->
 
-  <div class="card" *ngIf="tvRecommend$">
+  <div class="card" >
     <div class="card-body d-flex justify-content-center ">
-      <h3 class="card-title">{{tvRecommend$.name}}</h3>
+      <h3 class="card-title" >{{item.name}}</h3>
     </div>
     <div class="card-body d-inline-flex justify-content-around">
       <div class="card-body col">
-       {{tvRecommend$.summary}}
+       {{item.summary}}
        <br>
        <button href = '' class='mt-2 primary'>More about show</button>
       </div>
-      <img class="card-img col-2" src=`{{tvRecommend$.image.original}}` alt="Card image cap">
+      <img class="card-img col-2" src={{item.image.original}} alt="Card image cap">
       <div class="card-body col" >
-        <p><label class="mr-2"><strong >Runtime:</strong></label>{{tvRecommend$.runtime}}</p>
-        <p><label class="mr-2"><strong >Status:</strong></label>{{tvRecommend$.status}}</p>
-        <p><label class="mr-2"><strong >Show Type:</strong></label>{{tvRecommend$.type}}</p>
-        <p><label class="mr-2"><strong >Genres:</strong></label>{{tvRecommend$.genres}}</p>
-        <p><label class="mr-2"><strong >Official site:</strong></label>{{tvRecommend$.officialSite}}</p>
+        <p><label class="mr-2"><strong >Runtime:</strong></label>{{item.runtime}}</p>
+        <p><label class="mr-2"><strong >Status:</strong></label>{{item.status}}</p>
+        <p><label class="mr-2"><strong >Show Type:</strong></label>{{item.type}}</p>
+        <p><label class="mr-2"><strong >Genres:</strong></label>{{item.genres}}</p>
+        <p><label class="mr-2"><strong >Official site:</strong></label>{{item.officialSite}}</p>
       </div>
     </div>
   </div>
