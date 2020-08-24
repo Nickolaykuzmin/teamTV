@@ -19,7 +19,7 @@ const routes: Routes = [
 
   },
   {
-    path:'details',
+    path:'main/:id',
     component:TvRecommendDatailsComponent
   }
 

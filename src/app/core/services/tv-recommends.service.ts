@@ -18,7 +18,11 @@ export class TvRecommendsService {
 
 
   getTVRecommends(): Observable<TvRecommendsModel> {
-    return this.httpService.get<TvRecommendsModel>(this.API_TV_GET_RECOMMENDS)
+    return this.httpService.get<TvRecommendsModel>(this.API_TV_GET_RECOMMENDS);
+  }
+
+  getTVRecommend(itemId): Observable<TvRecommendsModel> {
+    return this.httpService.get<TvRecommendsModel>(this.API_TV_GET_RECOMMENDS+`/${itemId}`);
   }
 
   postTVRecommend(body: any): Observable<any> {

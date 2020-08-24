@@ -49,4 +49,8 @@ export class TvRecommendsComponent implements OnInit  {
   //   .subscribe(res => console.log('second', res))
   // }
 
+  onEdit(item: TvRecommendsModel) {
+    console.log('item', item);
+  }
+
 }

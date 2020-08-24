@@ -11,9 +11,8 @@
     </div>
     <div class="card-body d-inline-flex justify-content-around">
       <div class="card-body col">
-       {{item.summary}}
-s
-       <button class='mt-2 primary' routerLink="/admin/details">More about...</button>
+       <div>{{item.summary}}</div>
+       <button class='mt-2 primary' routerLink="['/main', item.id]" (click)="onEdit(item)">More about...</button>
       </div>
       <img class="card-img col-4" src={{item.image.original}} alt="Card image cap">
       <div class="card-body col" >
