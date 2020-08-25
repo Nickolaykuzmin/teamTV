@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpService} from "./http.service";
 import {TvRecommendsModel} from "../../admin/tv-recommends/models/tv-recommends.model";
 import {Observable} from "rxjs";
-import { HttpEvent } from '@angular/common/http';
+import {HttpEvent} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -16,13 +16,12 @@ export class TvRecommendsService {
   ) {
   }
 
-
-  getTVRecommends(): Observable<TvRecommendsModel> {
-    return this.httpService.get<TvRecommendsModel>(this.API_TV_GET_RECOMMENDS);
+  getTVRecommends(): Observable<TvRecommendsModel[]> {
+    return this.httpService.get<TvRecommendsModel[]>(this.API_TV_GET_RECOMMENDS);
   }
 
-  getTVRecommend(itemId): Observable<TvRecommendsModel> {
-    return this.httpService.get<TvRecommendsModel>(this.API_TV_GET_RECOMMENDS+`/${itemId}`);
+  getTVRecommend(itemId: number): Observable<TvRecommendsModel> {
+    return this.httpService.get<TvRecommendsModel>(this.API_TV_GET_RECOMMENDS + `/${itemId}`);
   }
 
   postTVRecommend(body: any): Observable<any> {

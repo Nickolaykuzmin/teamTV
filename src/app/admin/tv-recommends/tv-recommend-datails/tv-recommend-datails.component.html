@@ -1,5 +1,6 @@
 
-<div class="container mt-5 mb-5"  >
+<div class="container mt-5 mb-5" *ngIf="tvRecommend$ | async as tvRecommend">
+  {{ tvRecommend | json}}
   <h2 class="mb-3 ">TV Maze Reccomends Details</h2>
 
   <!-- <button (click)="postData('body-text')">Send</button> -->

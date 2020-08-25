@@ -1,10 +1,8 @@
-import { Component, OnInit, ComponentFactoryResolver } from '@angular/core';
-import { TvRecommendsService } from "../../../core/services/tv-recommends.service";
-import { TvRecommendsModel } from "../models/tv-recommends.model";
-import { UserService } from "../../../core/services/user.service"
-import { Observable } from "rxjs";
-import { AlertService } from 'src/app/core/services/alert.service';
-import { map } from 'rxjs/operators';
+import {Component, OnInit} from '@angular/core';
+import {TvRecommendsService} from "../../../core/services/tv-recommends.service";
+import {TvRecommendsModel} from "../models/tv-recommends.model";
+import {Observable} from "rxjs";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -12,29 +10,18 @@ import { map } from 'rxjs/operators';
   templateUrl: './tv-recommends.component.html',
   styleUrls: ['./tv-recommends.component.scss']
 })
-export class TvRecommendsComponent implements OnInit  {
-  public tvRecommend$: TvRecommendsModel[] = [];
+export class TvRecommendsComponent implements OnInit {
+  public tvRecommend$: Observable<TvRecommendsModel>;
+  private readonly RECOMMEND_ID = '6771';
 
   constructor(
+    private router: Router,
     private tvRecommendsService: TvRecommendsService,
-    private userService: UserService,
-    private alertService: AlertService
-    ) { }
+  ) {
+  }
 
   ngOnInit(): void {
-    this.tvRecommendsService
-    .getTVRecommends()
-    .pipe(
-      map( (res:TvRecommendsModel) => {
-        const newArrayData: TvRecommendsModel[] = [];
-        for(const key in res){
-          if (res.hasOwnProperty(key)){
-           newArrayData.push({...res[key], id:key});
-          }
-        }
-        return newArrayData;
-      })
-    ).subscribe(items => this.tvRecommend$ = items);
+    this.tvRecommend$ = this.tvRecommendsService.getTVRecommend(this.RECOMMEND_ID);
   }
 
   postData(body) {
@@ -49,8 +36,9 @@ export class TvRecommendsComponent implements OnInit  {
   //   .subscribe(res => console.log('second', res))
   // }
 
-  onEdit(item: TvRecommendsModel) {
-    console.log('item', item);
+  onEdit(tvRecommend: TvRecommendsModel) {
+    debugger
+    return this.router.navigate(['/admin', 'main', tvRecommend.id]);
   }
 
 }

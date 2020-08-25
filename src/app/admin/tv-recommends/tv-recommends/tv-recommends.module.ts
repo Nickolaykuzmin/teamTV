@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TvRecommendsComponent } from "./tv-recommends.component";
 import { TvRecommendsService } from "../../../core/services/tv-recommends.service";
+import {RouterModule} from "@angular/router";
 
 
 
@@ -12,9 +13,10 @@ import { TvRecommendsService } from "../../../core/services/tv-recommends.servic
   providers: [
     TvRecommendsService
   ],
-  imports: [
-    CommonModule
-  ],
+    imports: [
+        CommonModule,
+        RouterModule
+    ],
   exports: [TvRecommendsComponent]
 })
 export class TvRecommendsModule { }
