@@ -13,6 +13,7 @@ import {AdminModule} from "./admin/admin.module";
 import {AuthModule} from './core/auth/auth.module';
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { AuthGuardService } from './core/services/guards/auth-guard.service';
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     AuthModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [
     AppComponent
   ]

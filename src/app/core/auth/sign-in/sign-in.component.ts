@@ -1,10 +1,10 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {takeUntil} from "rxjs/operators";
-import {UserService} from "../core/services/user.service";
+import {UserService} from "./../../../core/services/user.service";
 import {Subject} from "rxjs";
 import {Router} from "@angular/router";
-import {AlertService} from "../core/services/alert.service";
+import {AlertService} from "./../../../core/services/alert.service";
 
 @Component({
   selector: 'app-sign-in',

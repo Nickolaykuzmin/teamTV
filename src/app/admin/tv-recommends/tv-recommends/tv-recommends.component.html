@@ -1,0 +1,10 @@
+
+<div class=" mt-5 mb-5" *ngFor="let item of tvRecommend$">
+  <div class="card">
+    <img class="card-img-top" src={{item.image.original}} alt="Card image cap">
+    <div class="card-body">
+      <h6 class="card-title" routerLink="['/main', item.id]" (click)="onEdit(item)">{{item.name}}</h6>
+    </div>
+  </div>
+</div>
+

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
+import {HttpClient, HttpHeaders, HttpParams, HttpEvent} from "@angular/common/http";
 import {Observable} from "rxjs";
 
 export enum HttpMethod {
@@ -20,10 +20,10 @@ export class HttpService {
   }
 
   get<T>(url: string, headers?: HttpHeaders, params?: HttpParams): Observable<T> {
-    return this.httpClient.get<T>(url, {headers, params});
+    return this.httpClient.request<T>(HttpMethod.GET, url, {headers, params});
   }
 
-  post(headers: HttpHeaders, data: any) {
-
+  post<T>(url: string, body: any, headers?: HttpHeaders, params?: HttpParams): Observable<any> {
+    return this.httpClient.request(HttpMethod.POST, url, {body, headers, params});
   }
 }

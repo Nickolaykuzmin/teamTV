@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SignInComponent } from 'src/app/sign-in/sign-in.component';
-import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
+import { SignInComponent } from './../../../app/core/auth/sign-in/sign-in.component';
+import { SignUpComponent } from './../../../app/core/auth/sign-up/sign-up.component';
+import { AuthGuardService } from '../services/guards/auth-guard.service';
 
 
 const routes: Routes = [
@@ -9,15 +10,18 @@ const routes: Routes = [
     path: 'login',
     component: SignInComponent,
 
+
   },
   {
     path: 'register',
     component: SignUpComponent,
-  },
+
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+
 })
 export class AuthRoutingModule { }
