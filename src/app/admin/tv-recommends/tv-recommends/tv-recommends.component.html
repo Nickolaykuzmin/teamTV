@@ -1,27 +1,9 @@
 
-<div class="container mt-5 mb-5" *ngFor="let item of tvRecommend$">
-  <h2 class="mb-3 ">TV Maze Reccomends</h2>
-
-  <button (click)="postData('body-text')">Send</button>
-  <!-- <button (click)="getLastVideos()">Last Videos</button> -->
-
-  <div class="card" >
-    <div class="card-body d-flex justify-content-center ">
-      <h3 class="card-title" >{{item.name}}</h3>
-    </div>
-    <div class="card-body d-inline-flex justify-content-around">
-      <div class="card-body col">
-       <div>{{item.summary}}</div>
-       <button class='mt-2 primary' routerLink="['/main', item.id]" (click)="onEdit(item)">More about...</button>
-      </div>
-      <img class="card-img col-4" src={{item.image.original}} alt="Card image cap">
-      <div class="card-body col" >
-        <p><label class="mr-2"><strong >Runtime:</strong></label>{{item.runtime}}</p>
-        <p><label class="mr-2"><strong >Status:</strong></label>{{item.status}}</p>
-        <p><label class="mr-2"><strong >Show Type:</strong></label>{{item.type}}</p>
-        <p><label class="mr-2"><strong >Genres:</strong></label>{{item.genres}}</p>
-        <p><label class="mr-2"><strong >Official site:</strong></label>{{item.officialSite}}</p>
-      </div>
+<div class=" mt-5 mb-5" *ngFor="let item of tvRecommend$">
+  <div class="card">
+    <img class="card-img-top" src={{item.image.original}} alt="Card image cap">
+    <div class="card-body">
+      <h6 class="card-title" routerLink="['/main', item.id]" (click)="onEdit(item)">{{item.name}}</h6>
     </div>
   </div>
 </div>

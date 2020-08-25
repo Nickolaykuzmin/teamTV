@@ -1,5 +1,7 @@
+@import "../../../../stylesheets/variables";
+
 .card{
-  // background: #fff;
+  width: 11rem;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
@@ -7,5 +9,9 @@
   -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
 };
 
+.card-body{
+  background: $color-background-green;
+  color: $color-tex-card-title;
+}
 
 
