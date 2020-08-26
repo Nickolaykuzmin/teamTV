@@ -12,7 +12,7 @@ import {Router} from "@angular/router";
 })
 export class TvRecommendsComponent implements OnInit {
   public tvRecommend$: Observable<TvRecommendsModel>;
-  private readonly RECOMMEND_ID = '6771';
+  private readonly RECOMMEND_ID = 6771;
 
   constructor(
     private router: Router,
@@ -37,7 +37,6 @@ export class TvRecommendsComponent implements OnInit {
   // }
 
   onEdit(tvRecommend: TvRecommendsModel) {
-    debugger
     return this.router.navigate(['/admin', 'main', tvRecommend.id]);
   }
 

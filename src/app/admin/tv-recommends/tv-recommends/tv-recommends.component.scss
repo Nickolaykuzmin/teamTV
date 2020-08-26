@@ -1,4 +1,4 @@
-@import "../../../../stylesheets/variables";
+@import "../../../../css/variables";
 
 .card{
   width: 11rem;
@@ -11,7 +11,7 @@
 
 .card-body{
   background: $color-background-green;
-  color: $color-tex-card-title;
+  color: $color-text-card-title;
 }
 
 
