@@ -37,7 +37,7 @@ export class TvRecommendsComponent implements OnInit {
   // }
 
   onEdit(tvRecommend: TvRecommendsModel) {
-    return this.router.navigate(['/admin', 'main', tvRecommend.id]);
+    return this.router.navigate(['/admin', 'main', 'recommends', tvRecommend.id]);
   }
 
 }
