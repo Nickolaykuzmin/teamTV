@@ -9,12 +9,12 @@ import { VideosService } from 'src/app/core/services/videos.service';
   styleUrls: ['./shows.component.scss']
 })
 export class ShowsComponent implements OnInit {
-  public tvRecommends$: TvRecommendsModel[] = [];
+  public tvRecommends$: Observable<TvRecommendsModel[]>;
 
   constructor(private videosService: VideosService,) { }
 
   ngOnInit() {
-    this.videosService.getTVRecommends().subscribe(res => {return this.tvRecommends$ = res});
+    this.tvRecommends$ = this.videosService.getTVRecommends();
     console.log('all', this.tvRecommends$);
   }
 }
