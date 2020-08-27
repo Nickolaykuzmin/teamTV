@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TvRecommendDatailsComponent } from "./tv-recommend-datails.component";
+import { TvRecommendDetailsComponent } from "./tv-recommend-details.component";
 import { VideosService } from "../../../core/services/videos.service";
 
 
 
 @NgModule({
   declarations: [
-    TvRecommendDatailsComponent
+    TvRecommendDetailsComponent
   ],
   providers: [
     VideosService
@@ -15,6 +15,6 @@ import { VideosService } from "../../../core/services/videos.service";
   imports: [
     CommonModule
   ],
-  exports: [TvRecommendDatailsComponent]
+  exports: [TvRecommendDetailsComponent]
 })
 export class TvRecommendDetailsModule { }

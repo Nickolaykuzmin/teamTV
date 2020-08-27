@@ -1,17 +1,16 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TvRecommendsModel} from "../models/tv-recommends.model";
 import {VideosService} from 'src/app/core/services/videos.service';
-import {map} from 'rxjs/operators';
 import {ActivatedRoute} from '@angular/router';
-import {Key} from 'protractor';
+
 import {Observable} from "rxjs";
 
 @Component({
-  selector: 'app-tv-recomend-datails',
-  templateUrl: './tv-recommend-datails.component.html',
-  styleUrls: ['./tv-recommend-datails.component.scss']
+  selector: 'app-tv-recomend-details',
+  templateUrl: './tv-recommend-details.component.html',
+  styleUrls: ['./tv-recommend-details.component.scss']
 })
-export class TvRecommendDatailsComponent implements OnInit {
+export class TvRecommendDetailsComponent implements OnInit {
 
   public tvRecommend$: Observable<TvRecommendsModel>;
 

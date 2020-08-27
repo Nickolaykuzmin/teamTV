@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {AngularFireAuthGuard} from "@angular/fire/auth-guard";
 import {MainComponent} from "./main/main.component";
-import {TvRecommendDatailsComponent} from './tv-recommends/tv-recommend-datails/tv-recommend-datails.component';
+import {TvRecommendDetailsComponent} from './tv-recommends/tv-recommend-details/tv-recommend-details.component';
 
 const routes: Routes = [
   {
@@ -18,7 +18,7 @@ const routes: Routes = [
   },
   {
     path: 'main/:id',
-    component: TvRecommendDatailsComponent
+    component: TvRecommendDetailsComponent
   }
 ];
 
