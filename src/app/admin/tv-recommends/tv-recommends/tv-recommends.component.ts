@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {TvRecommendsService} from "../../../core/services/tv-recommends.service";
+import {VideosService} from "../../../core/services/videos.service";
 import {TvRecommendsModel} from "../models/tv-recommends.model";
 import {Observable} from "rxjs";
 import {Router} from "@angular/router";
@@ -16,16 +16,16 @@ export class TvRecommendsComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private tvRecommendsService: TvRecommendsService,
+    private videosService: VideosService,
   ) {
   }
 
   ngOnInit(): void {
-    this.tvRecommend$ = this.tvRecommendsService.getTVRecommend(this.RECOMMEND_ID);
+    this.tvRecommend$ = this.videosService.getTVRecommend(this.RECOMMEND_ID);
   }
 
   postData(body) {
-    this.tvRecommendsService.postTVRecommend(body).subscribe(res => console.log(res));
+    this.videosService.postTVRecommend(body).subscribe(res => console.log(res));
   }
 
   // getLastVideos(){

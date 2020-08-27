@@ -1,6 +1,6 @@
 @import '../../../css/variables';
 
-.tv-records{
+::ng-deep app-tv-recommends{
   max-width: 100vw;
   display: flex;
   flex-wrap: wrap;

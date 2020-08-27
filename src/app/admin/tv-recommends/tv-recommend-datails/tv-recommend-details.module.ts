@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TvRecommendDatailsComponent } from "./tv-recommend-datails.component";
-import { TvRecommendsService } from "../../../core/services/tv-recommends.service";
+import { VideosService } from "../../../core/services/videos.service";
 
 
 
@@ -10,7 +10,7 @@ import { TvRecommendsService } from "../../../core/services/tv-recommends.servic
     TvRecommendDatailsComponent
   ],
   providers: [
-    TvRecommendsService
+    VideosService
   ],
   imports: [
     CommonModule

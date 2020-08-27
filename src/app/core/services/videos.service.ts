@@ -7,7 +7,7 @@ import {HttpEvent} from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class TvRecommendsService {
+export class VideosService {
   BASE_API_TV_URL = 'https://api.tvmaze.com';
   API_TV_GET_RECOMMENDS = `${this.BASE_API_TV_URL}/shows`;
 
