@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {VideosService} from "../../../core/services/videos.service";
-import {TvRecommendsModel} from "../models/tv-recommends.model";
+import {TvRecommendsModel} from "../../models/tv-recommends.model";
 import {Observable} from "rxjs";
 import {Router} from "@angular/router";
 

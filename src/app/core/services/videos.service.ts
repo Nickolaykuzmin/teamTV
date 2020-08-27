@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpService} from "./http.service";
-import {TvRecommendsModel} from "../../admin/tv-recommends/models/tv-recommends.model";
+import {TvRecommendsModel} from "./../../admin/models/tv-recommends.model";
 import {Observable} from "rxjs";
 import {HttpEvent} from '@angular/common/http';
 

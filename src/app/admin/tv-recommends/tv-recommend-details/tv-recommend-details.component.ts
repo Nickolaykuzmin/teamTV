@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {TvRecommendsModel} from "../models/tv-recommends.model";
+import {TvRecommendsModel} from "../../models/tv-recommends.model";
 import {VideosService} from 'src/app/core/services/videos.service';
 import {ActivatedRoute} from '@angular/router';
 

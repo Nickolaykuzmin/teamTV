@@ -5,7 +5,7 @@ import {MainComponent} from './main/main.component';
 import {TvRecommendsModule} from "./tv-recommends/tv-recommends/tv-recommends.module";
 import { HeaderComponent } from './header/header.component';
 import { TvRecommendDetailsModule } from './tv-recommends/tv-recommend-details/tv-recommend-details.module';
-import { ShowsComponent } from './shows/shows.component';
+import { ShowsModule } from './shows/shows.module';
 
 
 @NgModule({
@@ -17,7 +17,8 @@ import { ShowsComponent } from './shows/shows.component';
     CommonModule,
     AdminRoutingModule,
     TvRecommendsModule,
-    TvRecommendDetailsModule
+    TvRecommendDetailsModule,
+    ShowsModule
   ]
 })
 export class AdminModule { }
