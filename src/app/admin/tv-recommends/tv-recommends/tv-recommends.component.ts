@@ -3,6 +3,7 @@ import {VideosService} from "../../../core/services/videos.service";
 import {TvRecommendsModel} from "../../models/tv-recommends.model";
 import {Observable} from "rxjs";
 import {Router} from "@angular/router";
+import {LastVisitedService} from "../../../core/services/last-visited.service";
 
 
 @Component({
@@ -16,6 +17,7 @@ export class TvRecommendsComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private lastVisitedService: LastVisitedService,
     private videosService: VideosService,
   ) {
   }
@@ -24,8 +26,8 @@ export class TvRecommendsComponent implements OnInit {
     this.tvRecommend$ = this.videosService.getTVRecommend(this.RECOMMEND_ID);
   }
 
-  postData(body) {
-    this.videosService.postTVRecommend(body).subscribe(res => console.log(res));
+  insertPostTV(body: string) {
+    return this.videosService.postTVRecommend(body);
   }
 
   // getLastVideos(){
@@ -37,6 +39,7 @@ export class TvRecommendsComponent implements OnInit {
   // }
 
   onEdit(tvRecommend: TvRecommendsModel) {
+    this.lastVisitedService.addLastVisitToStorage(tvRecommend);
     return this.router.navigate(['/admin', 'main', 'recommends', tvRecommend.id]);
   }
 

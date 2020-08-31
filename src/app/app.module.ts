@@ -14,7 +14,7 @@ import {AuthModule} from './core/auth/auth.module';
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { AuthGuardService } from './core/services/guards/auth-guard.service';
-
+import {LocalStorageModule} from "angular-2-local-storage";
 
 @NgModule({
   declarations: [
@@ -26,6 +26,10 @@ import { AuthGuardService } from './core/services/guards/auth-guard.service';
     AppRoutingModule,
     CoreModule,
     AngularFireModule.initializeApp(environment.configFirebase),
+    LocalStorageModule.forRoot({
+      prefix: 'tvMaze',
+      storageType: 'localStorage'
+    }),
     AngularFireAuthModule,
     NgbModule,
     AdminModule,

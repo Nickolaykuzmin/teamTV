@@ -7,11 +7,13 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {HttpService} from "./services/http.service";
 import {ToastrModule} from "ngx-toastr";
 import {AlertService} from "./services/alert.service";
+import {LastVisitedService} from "./services/last-visited.service";
 
 @NgModule({
   declarations: [],
   providers: [
     GeneralInterceptor,
+    LastVisitedService,
     AuthService,
     AlertService,
     HttpService,

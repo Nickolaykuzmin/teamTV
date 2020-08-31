@@ -6,18 +6,22 @@ import {TvRecommendsModule} from "./tv-recommends/tv-recommends/tv-recommends.mo
 import { HeaderComponent } from './header/header.component';
 import { TvRecommendDetailsModule } from './tv-recommends/tv-recommend-details/tv-recommend-details.module';
 import { ShowsModule } from './shows/shows.module';
+import { ClassDirective } from './class.directive';
 
 
 @NgModule({
   declarations: [
     MainComponent,
-    HeaderComponent
+    HeaderComponent,
+    ClassDirective
+  ],
+  exports: [
+    ClassDirective
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     TvRecommendsModule,
-    TvRecommendDetailsModule,
     ShowsModule
   ]
 })
