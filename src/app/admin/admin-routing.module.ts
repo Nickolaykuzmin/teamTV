@@ -2,12 +2,9 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {AngularFireAuthGuard} from "@angular/fire/auth-guard";
 import {MainComponent} from "./main/main.component";
-import {TvRecommendDatailsComponent} from './tv-recommends/tv-recommend-datails/tv-recommend-datails.component';
-//
-// <div class="container">
-// <h2 class="mb-3 mt-3">TV Maze Reccomends</h2>
-// <app-tv-recommends class="tv-records"></app-tv-recommends>
-//   </div>
+import {TvRecommendDetailsComponent} from './tv-recommends/tv-recommend-details/tv-recommend-details.component';
+import { ShowsComponent } from './shows/shows.component';
+import { TvRecommendsComponent } from './tv-recommends/tv-recommends/tv-recommends.component';
 
 const routes: Routes = [
   {
@@ -20,11 +17,21 @@ const routes: Routes = [
     path: 'main',
     component: MainComponent,
     canActivate: [AngularFireAuthGuard],
+    children: [
+      {
+        path: 'shows',
+        component: ShowsComponent
+      },
+      {
+        path: 'recommends',
+        component: TvRecommendsComponent
+      },
+      {
+        path: 'recommends/:id',
+        component: TvRecommendDetailsComponent
+      }
+    ]
   },
-  {
-    path: 'main/:id',
-    component: TvRecommendDatailsComponent
-  }
 ];
 
 @NgModule({

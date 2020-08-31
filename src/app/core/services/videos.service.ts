@@ -1,13 +1,13 @@
 import {Injectable} from '@angular/core';
 import {HttpService} from "./http.service";
-import {TvRecommendsModel} from "../../admin/tv-recommends/models/tv-recommends.model";
+import {TvRecommendsModel} from "./../../admin/models/tv-recommends.model";
 import {Observable} from "rxjs";
 import {HttpEvent} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TvRecommendsService {
+export class VideosService {
   BASE_API_TV_URL = 'https://api.tvmaze.com';
   API_TV_GET_RECOMMENDS = `${this.BASE_API_TV_URL}/shows`;
 

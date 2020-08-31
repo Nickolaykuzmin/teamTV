@@ -1,4 +1,4 @@
-@import "../../../../css/variables";
+@import "./../../../css/variables";
 
 .card{
   width: 11rem;
@@ -14,4 +14,9 @@
   color: $color-text-card-title;
 }
 
+.list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 

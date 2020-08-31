@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="list mt-5 mb-5" *ngIf="tvRecommends$ | async as items">
+    <div class="card m-2" *ngFor="let item of items">
+      <img class="card-img-top" loading="lazy" [src]="item.image.medium" alt="Card image cap">
+      <div class="card-body">
+        <h6 class="card-title">{{item.name}}</h6>
+      </div>
+    </div>
+  </div>
+</div>
+

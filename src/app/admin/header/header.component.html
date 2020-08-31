@@ -1,17 +1,32 @@
 <header>
-  <nav class="navbar">
-    <a class="nav-link" href="#" routerLink="">Home</a>
-    <ul class="nav justify-content-end">
-      <ng-container *ngIf="(authUser$ | async) as user;">
-        <li class="nav-item mr-3">
-          <span>{{user.email}}</span>
+
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" [routerLink]="'/admin/main'">Videos</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/admin/main/shows'">Shows <span class="sr-only">(current)</span></a>
         </li>
-        <li></li>
-        <div class="nav-item">
-          <a (click)="logOut()" routerLink="/auth/login">Sign Out</a>
-        </div>
-      </ng-container>
-    </ul>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/admin/main/recommends'">Recommends</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <ul class="nav justify-content-end ml-3">
+        <ng-container *ngIf="(authUser$ | async) as user;">
+          <li class="nav-item mr-3">
+            <span>{{user.email}}</span>
+          </li>
+          <div class="nav-item">
+            <a (click)="logOut()" [routerLink]="'/auth/login'">Sign Out</a>
+          </div>
+        </ng-container>
+      </ul>
+    </div>
   </nav>
 
 </header>
